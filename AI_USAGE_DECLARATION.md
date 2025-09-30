@@ -89,7 +89,7 @@ All transaction processing logic in `engine.rs`:
 - `Read` trait implementation with 8KB buffering
 
 **What I did:**
-- Reviewed and understood implementation thoroughly
+- Reviewed the implementation thoroughly
 - Modified test assertions and timeouts
 - Added correctness validation checks
 - Wrote documentation comments explaining the approach
@@ -112,31 +112,3 @@ All transaction processing logic in `engine.rs`:
 - Serde deserialization syntax for case-insensitive enums
 - Cargo.toml dependency version compatibility
 - CSV crate API usage patterns
-
----
-
-## Prompting Strategy
-
-I always understood what Claude provided before integrating it. I can defend every line of code.
-
----
-
-## What I'm Ready to Discuss
-
-I can explain in depth:
-- **Why `rust_decimal`?** Fixed-point arithmetic prevents rounding errors (e.g., 0.1 + 0.2 != 0.3 in f64)
-- **Why cleanup transactions?** Reduces memory from O(all txs) to O(disputed txs) - 100x improvement
-- **Why disputes only on deposits?** Fraud scenario: reverse unauthorized deposits, not intentional withdrawals
-- **How does streaming work?** CSV iterator with `rdr.deserialize()` processes row-by-row without loading full dataset
-- **Why allow negative available during dispute?** Spec doesn't forbid; represents overdraft during investigation
-- **Memory complexity?** O(clients) + O(disputed_txs) - bounded and scalable
-- **How to scale for concurrent TCP streams?** Actor model per client or shared engine with message queue
-- **Every test case and edge case it covers**
-
----
-
-## Honesty Statement
-
-I used Claude as a **productivity multiplier**, not a replacement for engineering judgment. 
-
-I'm confident discussing any aspect of this codebase because I understand the trade-offs, alternatives, and implementation details. 
