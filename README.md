@@ -2,14 +2,6 @@
 
 A streaming transaction processor that handles deposits, withdrawals, disputes, and chargebacks. Built with Rust for safety, performance, and correctness in financial operations.
 
-## Quick Start
-
-```bash
-cargo build --release
-cargo run -- transactions.csv > accounts.csv
-cargo test
-```
-
 ## Build and Test
 
 ```bash
