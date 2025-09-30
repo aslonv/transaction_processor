@@ -1,0 +1,8 @@
+/target
+*.pdf
+test_everything.sh
+test_everything.bat
+transactions.csv
+accounts.csv
+output*.csv
+test_out*.csv
