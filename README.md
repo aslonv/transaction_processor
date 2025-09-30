@@ -114,7 +114,7 @@ I wrote tests at three levels:
 
 **Integration tests** verify end-to-end workflows with realistic transaction sequences. The dispute chain test (deposit → dispute → resolve, then deposit → dispute → chargeback) ensures state transitions work correctly across multiple operations.
 
-The performance test deserves special mention - it's not just about speed, it proves the streaming claim. By implementing a custom `Read` trait that generates data on-the-fly, I demonstrate the engine doesn't need to pre-load transactions. This is critical the emphasis on streaming large datasets.
+The performance test : custom `Read` trait generates data on-the-fly. The program doesn't need to pre-load transactions (with respect to streaming large datasets).
 
 ---
 
